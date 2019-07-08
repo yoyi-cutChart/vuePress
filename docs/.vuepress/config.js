@@ -2,6 +2,9 @@ module.exports = {
 	title: '前端切图仔 - k',
 	description: 'ok fine anyway',
 	base: '/vuePress/',
+	head: [
+    ['link', { rel: 'icon', href: '/images/duckke.png' }]
+  ],
 	themeConfig: {
 		nav: [
       { text: '首页', 
