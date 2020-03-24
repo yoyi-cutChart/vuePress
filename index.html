@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input v-model="msg" /><br>
+    <h1 v-bind="msg"></h1>
+  </div>
+</body>
+<script>
+  let model = {
+    msg: ''
+  }
+  const app = document.getElementById('app')
+  const models = app.querySelectorAll('[v-model=msg]')
+  const binds = app.querySelectorAll('[v-bind=msg]')
+  for (var i = 0; i < models.length; i++) {
+    models[i].onkeyup = function() {
+      model[this.getAttribute('v-model')] = this.value
+    }
+  }
+  Object.defineProperty(model, 'msg', {
+    get () {
+      return this.value
+    },
+    set (val) {
+      for (var i = 0; i < binds.length; i++) {
+        binds[i].innerHTML = val
+      }
+      this.value = val
+    }
+  })
+</script>
+</html>

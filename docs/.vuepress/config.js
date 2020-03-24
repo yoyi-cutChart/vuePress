@@ -11,16 +11,30 @@ module.exports = {
         link: '/' 
       },
       { text: '博客', 
-        link: '/Preface/',
+        link: '/Vue/',
       },
       { text: 'GitHub', link: 'https://github.com/yoyi-cutChart/vuePress'}
     ],
 		sidebar: [
-			{
-				title: '写在头顶上',
+      {
+				title: 'VuePress',
 				collapsable: true, // 是否折叠
 				children: [ // 具体文章内容的路径
-					'/Preface/'
+          '/VuePress/'
+				]
+      },
+      {
+				title: 'JavaScript',
+				collapsable: true, // 是否折叠
+				children: [ // 具体文章内容的路径
+          '/JavaScript/'
+				]
+      },
+      {
+				title: 'Vue.js',
+				collapsable: true, // 是否折叠
+				children: [ // 具体文章内容的路径
+          '/Vue/'
 				]
 			}
 		]
